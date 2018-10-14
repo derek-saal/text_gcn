@@ -14,7 +14,7 @@ print(stop_words)
 # vocab, embd, word_vector_map = loadWord2Vec(word_vector_file)
 # word_embeddings_dim = len(embd[0])
 
-dataset = '20ng'
+dataset = 'mr'
 
 doc_content_list = []
 f = open('data/corpus/' + dataset + '.txt', 'rb')
