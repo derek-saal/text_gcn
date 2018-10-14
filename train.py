@@ -9,8 +9,6 @@ from models import GCN, MLP
 import random
 import os
 
-from tqdm.autonotebook import tqdm
-
 # Set random seed
 seed = random.randint(1, 200)
 np.random.seed(seed)
@@ -89,7 +87,7 @@ def train(dataset):
     sess.run(tf.global_variables_initializer())
     cost_val = []
     # Train model
-    for epoch in tqdm(range(FLAGS.epochs)):
+    for epoch in range(FLAGS.epochs):
 
         t = time.time()
         # Construct feed dictionary
