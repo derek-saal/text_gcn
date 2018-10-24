@@ -157,3 +157,4 @@ def train(dataset):
     f.write(doc_embeddings_str)
     f.close()
 
+train('mr')

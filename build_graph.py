@@ -27,18 +27,14 @@ def build_graph(dataset):
     doc_train_list = []
     doc_test_list = []
 
-    f = open('data/' + dataset + '.txt', 'r')
-    lines = f.readlines()
-    for line in lines:
-        doc_name_list.append(line.strip())
-        temp = line.split("\t")
-        if temp[1].find('test') != -1:
-            doc_test_list.append(line.strip())
-        elif temp[1].find('train') != -1:
-            doc_train_list.append(line.strip())
-    f.close()
-    # print(doc_train_list)
-    # print(doc_test_list)
+    with open('data/' + dataset + '.txt', 'r') as f:
+        for line in f.readlines():
+            doc_name_list.append(line.strip())
+            temp = line.split("\t")
+            if temp[1].find('test') != -1:
+                doc_test_list.append(line.strip())
+            elif temp[1].find('train') != -1:
+                doc_train_list.append(line.strip())
 
     doc_content_list = []
     f = open('data/corpus/' + dataset + '.clean.txt', 'r')
@@ -522,3 +518,5 @@ def build_graph(dataset):
     f = open("data/ind.{}.adj".format(dataset), 'wb')
     pkl.dump(adj, f)
     f.close()
+
+build_graph('mr')

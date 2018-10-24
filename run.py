@@ -11,4 +11,4 @@ print("Running Build Graph\n")
 build_graph(dataset)
 
 print("Running Train\n")
-train(dataset)
+# train(dataset)
